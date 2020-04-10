@@ -1,0 +1,59 @@
+<!ELEMENT chronotachygraphe (vehicule, carte*) >
+<!ELEMENT vehicule (anomalie*) >
+<!ELEMENT anomalie (#PCDATA) >
+<!ELEMENT carte (conducteur | entreprise) >
+<!ELEMENT conducteur (activite*) >
+<!ELEMENT activite EMPTY >
+<!ELEMENT entreprise (session*) >
+<!ELEMENT session EMPTY >
+
+<!ATTLIST chronotachygraphe
+    dureeFonctionnement CDATA       #REQUIRED
+    dateRevision        CDATA       #REQUIRED
+    etatVerrou          (oui|non)   "non"
+>
+
+<!ATTLIST vehicule
+    immatriculation ID              "non"
+    statut          (solo|equipage) "solo"
+>
+
+<!ATTLIST anomalie
+    date    CDATA                   #REQUIRED
+    panne   (moteur|cabine|plateau) #REQUIRED
+>
+
+<!ATTLIST carte
+    couleur     (jaune|blanche)         #REQUIRED
+    heure       CDATA                   #REQUIRED
+    date        CDATA                   #REQUIRED
+    action      (insertion|extraction)  #REQUIRED
+>
+
+<!ATTLIST conducteur
+    nom             NMTOKENS    #REQUIRED
+    prenom          NMTOKENS    #REQUIRED
+    numPermis       ID          #REQUIRED
+    tempsService    CDATA       #REQUIRED
+>
+
+<!ATTLIST activite
+    type    (conduite|repas|travail|disponibilite)  "conduite"
+    vitesse CDATA                                   #REQUIRED
+    date    CDATA                                   #REQUIRED
+    duree   CDATA                                   #REQUIRED
+>
+
+<!ATTLIST entreprise
+    nom     NMTOKENS    #REQUIRED
+    adresse CDATA       #REQUIRED
+    statut  CDATA       #REQUIRED
+>
+
+<!ATTLIST session
+    immatriculation     IDREF       #REQUIRED
+    destination         NMTOKENS    #REQUIRED
+    estVide             (oui|non)   #IMPLIED
+    distance            CDATA       #REQUIRED
+    numPermis           IDREF       #REQUIRED
+>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chronotachygraphe SYSTEM "chronotachygraphe.dtd">
+<chronotachygraphe dureeFonctionnement="1440" dateRevision="20200129">
+    <vehicule>
+        <anomalie date="20200129" panne="moteur">Une panne moteur</anomalie>
+    </vehicule>
+    <carte couleur="blanche" heure="1200" date="20200129" action="insertion">
+        <entreprise nom="Dupond" adresse="Marine" statut="Boss"></entreprise>
+    </carte>
+    <carte couleur="blanche" heure="1201" date="20200129" action="extraction">
+        <entreprise nom="Dupond" adresse="Marine" statut="Boss"></entreprise>
+    </carte>
+    <carte couleur="jaune" heure="1204" date="20200129" action="insertion">
+        <conducteur nom="Dupont" prenom="Jean" numPermis="p1234" tempsService="0"></conducteur>
+    </carte>
+    <carte couleur="jaune" heure="1249" date="20200129" action="extraction">
+        <conducteur nom="Dupont" prenom="Jean" numPermis="p1234" tempsService="45"></conducteur>
+    </carte>
+</chronotachygraphe>
